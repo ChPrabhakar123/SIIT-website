@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="siitApp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIIT - Scientific Institute of Innovation and Technology</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+<style>
+body{font-family:'Segoe UI',sans-serif;margin:0;}
+
+/* HEADER */
+.top-header{
+    background:white;
+    color:#222;
+    padding:20px;
+    border-bottom:3px solid #ddd;
+}
+.logo-box{background:white;padding:10px;border-radius:10px;}
+.logo-img{width:130px;height:130px;border-radius:50%;}
+.college-name{font-size:28px;font-weight:bold;color:#000;}
+.tagline{font-size:16px;color:#555;}
+
+.navbar{background:#004e92;}
+
+.hero{
+    background:linear-gradient(to right,#2193b0,#6dd5ed);
+    color:white;
+    padding:100px 20px;
+    text-align:center;
+}
+
+.about{background:#f4f4f4;padding:60px 20px;}
+
+.observation{
+    background:#fff3cd;
+    padding:60px 20px;
+}
+
+.director{
+    background:#e3f2fd;
+    padding:60px 20px;
+}
+
+.programs{
+    background:#6a11cb;
+    padding:60px 20px;
+    color:white;
+}
+
+.program-card{
+    background:white;
+    color:#333;
+    border-radius:15px;
+    transition:0.4s;
+}
+.program-card:hover{
+    transform:scale(1.05);
+    box-shadow:0px 8px 18px rgba(0,0,0,0.3);
+}
+
+.contact{
+    background:#e0f7fa;
+    padding:60px 20px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    padding:20px;
+}
+footer a{color:#ffd200;}
+</style>
+</head>
+
+<body ng-controller="MainController">
+
+<!-- HEADER -->
+<div class="top-header">
+<div class="container">
+<div class="row align-items-center">
+
+<div class="col-md-3 text-center">
+<div class="logo-box">
+<img src="https://thumbs.dreamstime.com/b/vector-illustration-icons-logo-car-details-service-auto-parts-store-flat-design-248443461.jpg" 
+class="logo-img" alt="SIIT Logo">
+</div>
+</div>
+
+<div class="col-md-9 text-md-left text-center">
+<div class="college-name">
+Scientific Institute of Innovation and Technology (SIIT)
+</div>
+<div class="tagline">
+Industry Integrated Engineering Program (IIEP) – Self Financed
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<a class="navbar-brand" href="#">SIIT</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="#observation">IIEP Observation</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="#director">Director</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="#programs">Programs</a></li>
+<li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Welcome to SIIT</h1>
+<h3>Innovation | Industry | Integration</h3>
+<button class="btn btn-light btn-lg mt-3" id="applyBtn">Apply Now</button>
+</section>
+
+<!-- ABOUT -->
+<section class="about text-center" id="about">
+<div class="container">
+<h2>About SIIT</h2>
+<p>
+SIIT is a Self-Financed Industry Integrated Engineering Institution offering 
+advanced programs aligned with global industrial standards.
+</p>
+</div>
+</section>
+
+<!-- IIEP OBSERVATION -->
+<section class="observation text-center" id="observation">
+<div class="container">
+<h2>IIEP Observation</h2>
+<p>
+The Industry Integrated Engineering Program (IIEP) focuses on bridging 
+academic knowledge with real-world industry practices. 
+Students are trained with live industrial projects, internships, 
+skill certifications, and technology-driven innovation exposure.
+</p>
+</div>
+</section>
+
+<!-- DIRECTOR MESSAGE -->
+<section class="director text-center" id="director">
+<div class="container">
+<h2>Director's Message</h2>
+<h4>Director: Prabhakar</h4>
+<p>
+At SIIT, our mission is to empower students with industry-ready skills 
+through innovation, research, and practical exposure. 
+We believe in transforming education into real-world solutions.
+</p>
+</div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs text-center" id="programs">
+<div class="container">
+<h2>IIEP Programs</h2>
+<div class="row mt-4">
+
+<div class="col-md-4 mb-4" ng-repeat="program in programs">
+<div class="card program-card p-3">
+<h5>{{program}}</h5>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact text-center" id="contact">
+<div class="container">
+<h2>Contact Information</h2>
+
+<p><strong>Email:</strong> 
+<a href="mailto:scientificiit1@gmail.com">
+scientificiit1@gmail.com
+</a>
+</p>
+
+<p><strong>Website:</strong> 
+<a href="https://limat.ccbp.tech" target="_blank">
+limat.ccbp.tech
+</a>
+</p>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center">
+<p>© 2026 SIIT</p>
+<p>Email: <a href="mailto:scientificiit1@gmail.com">scientificiit1@gmail.com</a></p>
+<p>Website: <a href="https://limat.ccbp.tech" target="_blank">limat.ccbp.tech</a></p>
+</footer>
+
+<script>
+var app = angular.module("siitApp",[]);
+app.controller("MainController",function($scope){
+$scope.programs = [
+"CSE","AI-DS","AI-MS","EEE","ME",
+"Robotics Engineering","Drone Technology",
+"Electrical Vehicle Technology",
+"Mathematical Computing",
+"Quantum Computing","Green Engineering"
+];
+});
+</script>
+
+<script>
+$(document).ready(function(){
+$("#applyBtn").click(function(){
+alert("Admissions Open for 2026 Batch at SIIT!");
+});
+});
+</script>
+
+</body>
+</html>
